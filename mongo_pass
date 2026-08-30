@@ -1,0 +1,21 @@
+yankoshbadal_db_user
+pJ5imO6unobjeaOg
+mongodb+srv://<db_username>:pJ5imO6unobjeaOg@orbit.sqmhxpl.mongodb.net/
+
+
+
+
+Organization:
+Yankosh's Org - 2026-08-01
+
+Project:
+OrbitDB
+
+Cluster:
+OrbitCluster0 (free) , Username: yankoshbadal_db_user , Password: bx5Q54LKcDHzyq2s
+
+connection string: mongodb+srv://yankoshbadal_db_user:<db_password>@orbitcluster0.ppsun5k.mongodb.net/
+
+mongodb+srv://+++++USERNAME:++++++PASSWORD++++++CLUSTERNAME+++++.ppsunk.mongodb.net/+++++DATABASE NAME
+
+mongodb+srv://yankoshbadal_db_user:bx5Q54LKcDHzyq2s@orbitcluster0.ppsun5k.mongodb.net/OrbitDB
