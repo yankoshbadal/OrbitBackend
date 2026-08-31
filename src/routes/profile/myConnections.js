@@ -7,21 +7,21 @@ const myConnectionsListRouter = express.Router();
 
 myConnectionsListRouter.get("/myConnections", auth, async (req, res) => {
   try {
-    const thisUser = req.user._id;
+    const loggedInUser = req.user._id;
 
     //returns an array
     const allConnections = await Connections.find({
-      $or: [{ fromUserId: thisUser }, { toUserId: thisUser }],
+      $or: [{ fromUserId: loggedInUser }, { toUserId: loggedInUser }],
     })
       .populate({
         path: "fromUserId",
         select: "firstName lastName status",
-        match: { _id: { $ne: thisUser } },
+        match: { _id: { $ne: loggedInUser } },
       })
       .populate({
         path: "toUserId",
         select: "firstName lastName status",
-        match: { _id: { $ne: thisUser } },
+        match: { _id: { $ne: loggedInUser } },
       });
 
     if (allConnections.length === 0) {
