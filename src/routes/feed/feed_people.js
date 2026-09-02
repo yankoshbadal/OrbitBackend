@@ -9,6 +9,7 @@ feedPeopleRouter.get("/feed/people", auth, async(req, res)=>{
     try {
         const loggedInUser = req.user._id;
     } catch (error) {
+        //Code logic here
         
     }
 });
