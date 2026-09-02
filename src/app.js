@@ -9,6 +9,7 @@ const requestSendRouter = require("./routes/relations/request_send");
 const requestReceivedReview = require("./routes/relations/request_received_review");
 const connectionReview = require("./routes/relations/connection_review");
 const myConnectionsListRouter = require("./routes/profile/myConnections");
+const feedPeopleRouter = require("./routes/feed/feed_people");
 const cookieParser = require("cookie-parser");
 const app = express();
 
@@ -36,6 +37,7 @@ app.use("/", requestSendRouter);
 app.use("/", requestReceivedReview);
 app.use("/", connectionReview);
 app.use("/", myConnectionsListRouter);
+app.use("/", feedPeopleRouter);
 
 app.use("/", (req, res) => {
   res.send("Could not find the route");
