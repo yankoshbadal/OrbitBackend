@@ -18,7 +18,7 @@ loginRouter.post("/login",async(req, res)=>{
         if (!isPasswordValid) {
             return res.status(401).send("Invalid password");
         } else if(isPasswordValid){ 
-            const token = await jwt.sign({ id: user._id },"YankoshTheBoss",{ expiresIn: "30d" }); // Create a JWT
+            const token = await jwt.sign({ id: user._id },"YankoshTheBoss",{ expiresIn: "30d" }); // Create a JWT that only has an id
             res.cookie("token", token); //token as cookie
             res.status(200).send("Login successful");
         };

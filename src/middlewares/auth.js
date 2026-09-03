@@ -15,8 +15,8 @@ const auth = async(req, res, next)=>{
         if(!user){
             throw new Error("User not found");
         }
-        req.user = user; //to send it to "/profile" etc
-        next();
+        req.user = user; //to send it to other route if auth is used as a middleware -- "/profile" etc
+        next(); // do not forget to write this in any middleware
     }catch(err){
         res.status(401).send(err.message);//send err like this
     };
