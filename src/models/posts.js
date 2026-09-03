@@ -52,15 +52,22 @@ const postSchema = new mongoose.Schema(
       },
     ],
 
-    views: {
+    likesCount: {
       type: Number,
-      default: null,
+      default: 0,
+      min: 0,
+    },
+
+    commentsCount: {
+      type: Number,
+      default: 0,
+      min: 0,
     },
   },
   {
     timestamps: true,
     collection: "Posts",
-  }
+  },
 );
 
 module.exports = mongoose.model("Posts", postSchema);

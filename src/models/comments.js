@@ -32,6 +32,11 @@ const commentSchema = new mongoose.Schema(
         ref: "Likes",
       },
     ],
+    likesCount: {
+      type: Number,
+      default: 0,
+      min: 0,
+    },
 
     replyTo: {
       type: mongoose.Schema.Types.ObjectId,
@@ -42,7 +47,7 @@ const commentSchema = new mongoose.Schema(
   {
     timestamps: true,
     collection: "Comments",
-  }
+  },
 );
 
 module.exports = mongoose.model("Comments", commentSchema);

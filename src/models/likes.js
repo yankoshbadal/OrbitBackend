@@ -1,5 +1,3 @@
-//You may implement it like comments, I find that better
-
 const mongoose = require("mongoose");
 
 const likeSchema = new mongoose.Schema(
