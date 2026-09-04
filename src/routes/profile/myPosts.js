@@ -2,9 +2,9 @@ const express = require("express");
 const auth = require("../../middlewares/auth");
 const Posts = require("../../models/posts");
 
-const myPostRouter = express.Router();
+const myPostsRouter = express.Router();
 
-myPostRouter.get("/myPost", auth, async (req, res) => {
+myPostsRouter.get("/myPost", auth, async (req, res) => {
   try {
     const loggedInUserId = req.user._id;
 
@@ -26,4 +26,4 @@ myPostRouter.get("/myPost", auth, async (req, res) => {
   }
 });
 
-module.exports = myPostRouter;
+module.exports = myPostsRouter;
