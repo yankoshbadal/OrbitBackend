@@ -11,6 +11,7 @@ const connectionReview = require("./routes/relations/connection_review");
 const myConnectionsListRouter = require("./routes/profile/myConnections");
 const feedPeopleRouter = require("./routes/feed/feed_people");
 const postUploadRouter = require("./routes/post/post_upload");
+const postDeleteRouter = require("./routes/post/post_delete");
 const cookieParser = require("cookie-parser");
 const app = express();
 
@@ -40,6 +41,7 @@ app.use("/", connectionReview);
 app.use("/", myConnectionsListRouter);
 app.use("/", feedPeopleRouter);
 app.use("/", postUploadRouter);
+app.use("/", postDeleteRouter);
 
 app.use("/", (req, res) => {
   res.send("404 Route not found!");

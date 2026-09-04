@@ -10,7 +10,7 @@ postUploadRouter.post("/post/upload", auth, async (req, res) => {
     const loggedInUser = req.user._id;
 
     const post = new Posts({
-      ...req.body,
+      ...req.body, // spread operator
       author: loggedInUser,
     });
 
