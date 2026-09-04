@@ -4,7 +4,7 @@ const Posts = require("../../models/posts");
 
 const myPostsRouter = express.Router();
 
-myPostsRouter.get("/myPost", auth, async (req, res) => {
+myPostsRouter.get("/myPosts", auth, async (req, res) => {
   try {
     const loggedInUserId = req.user._id;
 
