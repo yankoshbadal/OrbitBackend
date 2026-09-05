@@ -38,20 +38,6 @@ const postSchema = new mongoose.Schema(
       default: true,
     },
 
-    likes: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Likes",
-      },
-    ],
-
-    comments: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Comments",
-      },
-    ],
-
     likesCount: {
       type: Number,
       default: 0,
