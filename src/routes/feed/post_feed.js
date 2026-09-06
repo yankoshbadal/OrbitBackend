@@ -25,11 +25,6 @@ postFeedRouter.get("/feed/post", auth, async (req, res) => {
       .limit(limit) // limit-- no of docs in ecach retrieve
       .lean();
 
-    return res.status(500).json({
-      success: false,
-      message: "Something went wrong",
-      error,
-    });
     return res.status(200).json({
       success: true,
       page,
