@@ -12,6 +12,7 @@ postUploadRouter.post("/post/upload", auth, async (req, res) => {
     const post = new Posts({
       ...req.body, // spread operator
       author: loggedInUser,
+      campus: loggedInUser.campus,
     });
 
     await post.save();

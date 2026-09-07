@@ -8,6 +8,12 @@ const postSchema = new mongoose.Schema(
       ref: "Users",
       required: true,
     },
+    
+    campus: {
+      type: String,
+      required: true,
+      trim: true,
+    },
 
     caption: {
       type: String,
