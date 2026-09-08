@@ -1,5 +1,7 @@
 const express = require("express");
 const connectDB = require("./config/database");
+const cookieParser = require("cookie-parser");
+
 const signupRouter = require("./routes/account/signup");
 const loginRouter = require("./routes/account/login");
 const profileRoute = require("./routes/profile/profile");
@@ -14,7 +16,8 @@ const postUploadRouter = require("./routes/post/post_upload");
 const postDeleteRouter = require("./routes/post/post_delete");
 const myPostsRouter = require("./routes/profile/myPosts");
 const feedPostRouter = require("./routes/feed/feed_post");
-const cookieParser = require("cookie-parser");
+const postInteractRouter = require("./routes/feed/postInteract");
+
 const app = express();
 
 //Connected to the DB already.  then listen
@@ -46,6 +49,7 @@ app.use("/", postUploadRouter);
 app.use("/", postDeleteRouter);
 app.use("/", myPostsRouter);
 app.use("/", feedPostRouter);
+app.use("/", postInteractRouter);
 
 app.use("/", (req, res) => {
   res.send("404 Route not found!");
