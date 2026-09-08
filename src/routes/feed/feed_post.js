@@ -4,9 +4,9 @@ const auth = require("../../middlewares/auth");
 const Connections = require("../../models/connections");
 const Posts = require("../../models/posts");
 
-const postFeedRouter = express.Router();
+const feedPostRouter = express.Router();
 
-postFeedRouter.get("/feed/post", auth, async (req, res) => {
+feedPostRouter.get("/feed/post", auth, async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
     let limit = parseInt(req.query.limit) || 10;
@@ -64,4 +64,4 @@ postFeedRouter.get("/feed/post", auth, async (req, res) => {
   }
 });
 
-module.exports = postFeedRouter;
+module.exports = feedPostRouter;
