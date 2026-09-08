@@ -13,7 +13,7 @@ const feedPeopleRouter = require("./routes/feed/feed_people");
 const postUploadRouter = require("./routes/post/post_upload");
 const postDeleteRouter = require("./routes/post/post_delete");
 const myPostsRouter = require("./routes/profile/myPosts");
-const postFeedRouter = require("./routes/feed/post_feed");
+const feedPostRouter = require("./routes/feed/feed_post");
 const cookieParser = require("cookie-parser");
 const app = express();
 
@@ -45,7 +45,7 @@ app.use("/", feedPeopleRouter);
 app.use("/", postUploadRouter);
 app.use("/", postDeleteRouter);
 app.use("/", myPostsRouter);
-app.use("/", postFeedRouter);
+app.use("/", feedPostRouter);
 
 app.use("/", (req, res) => {
   res.send("404 Route not found!");
