@@ -17,6 +17,7 @@ const postDeleteRouter = require("./routes/post/post_delete");
 const myPostsRouter = require("./routes/profile/myPosts");
 const feedPostRouter = require("./routes/feed/feed_post");
 const postInteractRouter = require("./routes/feed/postInteract");
+const commentUploadRouter = require("./routes/comment/comment_upload");
 
 const app = express();
 
@@ -50,6 +51,7 @@ app.use("/", postDeleteRouter);
 app.use("/", myPostsRouter);
 app.use("/", feedPostRouter);
 app.use("/", postInteractRouter);
+app.use("/", commentUploadRouter);
 
 app.use("/", (req, res) => {
   res.send("404 Route not found!");
