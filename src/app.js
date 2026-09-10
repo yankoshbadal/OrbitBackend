@@ -18,6 +18,7 @@ const myPostsRouter = require("./routes/profile/myPosts");
 const feedPostRouter = require("./routes/feed/feed_post");
 const postInteractRouter = require("./routes/feed/postInteract");
 const commentUploadRouter = require("./routes/comment/comment_upload");
+const commentDeleteRouter = require("./routes/comment/comment_delete");
 
 const app = express();
 
@@ -52,6 +53,7 @@ app.use("/", myPostsRouter);
 app.use("/", feedPostRouter);
 app.use("/", postInteractRouter);
 app.use("/", commentUploadRouter);
+app.use("/", commentDeleteRouter);
 
 app.use("/", (req, res) => {
   res.send("404 Route not found!");
