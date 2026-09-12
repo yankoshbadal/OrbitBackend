@@ -7,11 +7,11 @@ const postUploadRouter = express.Router();
 
 postUploadRouter.post("/post/upload", auth, async (req, res) => {
   try {
-    const loggedInUser = req.user._id;
+    const loggedInUser = req.user;
 
     const post = new Posts({
       ...req.body, // spread operator
-      author: loggedInUser,
+      author: loggedInUser._id,
       campus: loggedInUser.campus,
     });
 
